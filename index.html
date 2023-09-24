@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список дел</title>
+  <link rel="stylesheet" href="styles/defaults.css">
+  <link rel="stylesheet" href="styles/todo.css">
+  <link rel="stylesheet" href="styles/timer.css">
+</head>
+<body>
+  <section class="app">
+    <div class="app-inner">
+      
+      <article class="todo">
+        <h1 class="title">Мои дела</h1>
+        <div class="form-input">
+          <input type="text" placeholder="Дело">
+          <button class="btn">Добавить</button>
+        </div>
+        <ul class="list">
+          <li class="list__item">Дело 1</li>
+        </ul>
+      </article>
+
+      <div class="timer">
+        <span>00</span>
+        <span>:</span>
+        <span>00</span>
+        <span>:</span>
+        <span>00</span>
+        <button class="btn">Старт</button>
+        <button class="btn">Стоп</button>
+        <button class="btn">Сброс</button>
+      </div>
+      
+    </div>
+  </section>
+
+  <script src="scripts/timer.js"></script>
+  <script src="scripts/todo.js"></script>
+</body>
+</html>
