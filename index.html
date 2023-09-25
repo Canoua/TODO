@@ -14,24 +14,26 @@
       
       <article class="todo">
         <h1 class="title">Мои дела</h1>
-        <div class="form-input">
-          <input type="text" placeholder="Дело">
-          <button class="btn">Добавить</button>
+        <div class="form-input" id="form-input">
+          <input type="text" placeholder="Дело" id="input">
+          <button class="btn" id="add-btn">Добавить</button>
         </div>
-        <ul class="list">
-          <li class="list__item">Дело 1</li>
-        </ul>
+        <ul class="list" id="list"></ul>
       </article>
 
       <div class="timer">
-        <span>00</span>
-        <span>:</span>
-        <span>00</span>
-        <span>:</span>
-        <span>00</span>
-        <button class="btn">Старт</button>
-        <button class="btn">Стоп</button>
-        <button class="btn">Сброс</button>
+        <div class="timer__number">
+          <span>00</span>
+          <span>:</span>
+          <span>00</span>
+          <span>:</span>
+          <span>00</span>
+        </div>
+        <div class="timer__buttons">
+          <button class="btn" id="start-btn">Старт</button>
+          <button class="btn" id="stop-btn">Стоп</button>
+          <button class="btn" id="reset-btn">Сброс</button>
+        </div>
       </div>
       
     </div>
