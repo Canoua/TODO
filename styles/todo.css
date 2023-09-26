@@ -9,11 +9,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .title{
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-size: 30px;
   line-height: 120%;
 }
@@ -27,6 +27,12 @@
   font-size: 25px;
 }
 
+.btn-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .add-btn{
   background-color: greenyellow;
   color: #fff;
@@ -35,7 +41,27 @@
   font-size: 25px;
 }
 
+.delete-btn{
+  padding: 3px 10px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.done-btn{
+  height: 30px;
+  border: none;
+}
+
+.done-btn img{
+  height: 100%;
+}
+
 .list__item{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 5px;
 }

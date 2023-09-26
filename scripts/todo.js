@@ -6,7 +6,15 @@ const input = document.getElementById('input');
 function addTodo() {
   const todoItem = document.createElement('div');
   
-  todoItem.innerHTML = `${input.value}<button class="delete-btn btn">удалить</button><button class="done-btn btn">выполненно</button>`;
+  todoItem.innerHTML = `
+    ${input.value}
+    <div class="btn-wrapper">
+      <button class="delete-btn btn">x</button>
+      <button class="done-btn btn">
+        <img src="./../images/done.jpg" alt="done" />
+      </button>
+    </div>
+  `;
   todoItem.classList.add('list__item');
   list.appendChild(todoItem);
 
