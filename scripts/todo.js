@@ -16,14 +16,21 @@ function addTodo() {
     </div>
   `;
   todoItem.classList.add('list__item');
-  list.appendChild(todoItem);
+
+  //validation
+  if(input.value !== '') {
+    list.appendChild(todoItem);
+    input.value = '';
+  } else{
+    alert('введите название своего дела')
+  }
 
   let deleteBtn = document.querySelectorAll('.delete-btn');
   for (let i=0; i<deleteBtn.length; i++){
     if(deleteBtn[i]) {
       deleteBtn[i].addEventListener('click', function(event) {
         let targetBtn = event.target;
-        let parent = targetBtn.parentNode;
+        let parent = targetBtn.closest('.list__item');
         parent.style.display = 'none';
       })
     }
