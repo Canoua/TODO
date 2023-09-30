@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список дел</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/defaults.css">
+  <link rel="stylesheet" href="styles/todo.css">
+  <link rel="stylesheet" href="styles/timer.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="todo">
+      <div class="todo__header">
+        <h1 class="title">Что хотите сделать?</h1>
+        <form action="#" class="todo__form" id="form-input">
+          <input type="text" placeholder="Дело" class="input" id="input">
+          <button class="add-btn btn" id="add-btn" type="submit">+</button>
+        </form>
+      </div>
+      <div class="todo__output">
+        <article class="todo__output-content">
+          <h2 class="title-2">Мои дела</h1>
+            <ul class="list" id="list"></ul>
+        </article>
+      </div>
+    </div>
+    <div class="timer">
+      <div class="timer__number">
+        <span class="hours">00</span>
+        <span>:</span>
+        <span class="minutes">00</span>
+        <span>:</span>
+        <span class="seconds">00</span>
+      </div>
+      <div class="timer__buttons">
+        <div class="btn-wrapper">
+          <button class="start-btn btn" id="start-btn">Старт</button>
+        </div>
+        <div class="btn-wrapper">
+          <button class="stop-btn btn" id="stop-btn" disabled>Стоп</button>
+        </div>
+        <div class="btn-wrapper">
+          <button class="reset-btn btn" id="reset-btn" disabled>Сброс</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <script src="scripts/timer.js"></script>
+  <script src="scripts/todo.js"></script>
+</body>
+</html>
