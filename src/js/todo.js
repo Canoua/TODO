@@ -2,10 +2,16 @@ const addBtn = document.getElementById('add-btn');
 const formInput = document.getElementById('form-input');
 const list = document.getElementById('list');
 const input = document.getElementById('input');
+const stub = document.getElementById('stub');
+
+stub.innerHTML = 'Дел нет'; 
 
 function addTodo() {
   const todoItem = document.createElement('div');
-  
+  const error = document.getElementById('error');
+ 
+  //рендер дела/рефакторинг
+  todoItem.classList.add('list__item');
   todoItem.innerHTML = `
     ${input.value}
     <div class="btn-wrapper">
@@ -15,25 +21,32 @@ function addTodo() {
       </button>
     </div>
   `;
-  todoItem.classList.add('list__item');
-
+  
   //validation
-  if(input.value !== '') {
-    list.appendChild(todoItem);
-    input.value = '';
-  } else{
-    alert('введите название своего дела')
-  }
-
-  let deleteBtn = document.querySelectorAll('.delete-btn');
-  for (let i=0; i<deleteBtn.length; i++){
-    if(deleteBtn[i]) {
-      deleteBtn[i].addEventListener('click', function(event) {
-        let targetBtn = event.target;
-        let parent = targetBtn.closest('.list__item');
-        parent.style.display = 'none';
-      })
+  function validation() {
+    if(input.value !== '') {
+      list.appendChild(todoItem);
+      input.value = '';
+      error.innerHTML = '';
+      stub.innerHTML = '';
+    } else {
+      error.innerHTML = 'введите название своего дела';
+      // stub.innerHTML = 'Дел нет';
     }
+  }
+  validation();
+
+  //удаление дела по кнопке "x"
+  let deleteBtn = document.querySelectorAll('.delete-btn');
+  for (let i=0; i<deleteBtn.length; i++){   
+    deleteBtn[i].addEventListener('click', function(event) {
+      let targetBtn = event.target;
+      let parent = targetBtn.closest('.list__item');
+      parent.style.display = 'none';
+      if(deleteBtn.length == 0) {
+        stub.innerHTML = 'Дел нет';
+      }
+    })
   }  
 }
 

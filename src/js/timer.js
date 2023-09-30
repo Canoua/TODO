@@ -10,12 +10,6 @@ let secondsCounter = 0;
 let minutesCounter = 0;
 let hoursCounter = 0;
 
-function timerRender() {
-  console.log('timerRender');
-}
-
-timerRender();
-
 function removeAttribute(block) {
   block.removeAttribute('disabled', 'disabled');
 }
@@ -38,14 +32,13 @@ function timer() {
   setInterval(timeIncrement, 1000);  
 }
 
-function timeReset() {
-  console.log('timereset');
-}
-
-function timeStop() {
-  console.log('timestop');
-}
+// function timeReset() {
+//   console.log('timereset');
+// }
+// function timeStop() {
+//   console.log('timestop');
+// }
 
 start.addEventListener('click', timer);
-stop.addEventListener('click', timeStop);
-reset.addEventListener('click', timeReset);
+// stop.addEventListener('click', timeStop);
+// reset.addEventListener('click', timeReset);

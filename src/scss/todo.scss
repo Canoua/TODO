@@ -17,6 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
     &-content{
       margin-right: 50px;
       border: 1px solid #000;
@@ -30,7 +31,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
   }
 }
 

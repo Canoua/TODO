@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Список дел</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="wrapper">
@@ -14,11 +17,16 @@
               <input type="text" placeholder="Дело" class="input" id="input">
               <button class="add-btn btn" id="add-btn" type="submit">+</button>
             </form>
+            <div class="error" id="error"></div>
           </div>
           <div class="todo__output">
             <article class="todo__output-content">
               <h2 class="title-2">Мои дела</h1>
-                <ul class="list" id="list"></ul>
+                <ul class="list" id="list">
+                  <div class="stub" id="stub">
+                    <!-- Пока что дел нет:) -->
+                  </div>
+                </ul>
             </article>
           </div>
       </div>
