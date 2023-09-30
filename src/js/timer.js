@@ -10,6 +10,12 @@ let secondsCounter = 0;
 let minutesCounter = 0;
 let hoursCounter = 0;
 
+function timerRender() {
+  console.log('timerRender');
+}
+
+timerRender();
+
 function removeAttribute(block) {
   block.removeAttribute('disabled', 'disabled');
 }

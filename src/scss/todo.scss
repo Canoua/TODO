@@ -5,37 +5,33 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.todo__header{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.todo__output{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.todo__output-content{
-  margin-right: 50px;
-  border: 1px solid #000;
-  padding: 50px;
-  border-radius: 10px;
-  height: 100%;
-  width: 100%;
-}
-
-.todo__form{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
+  &__header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__output{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-content{
+      margin-right: 50px;
+      border: 1px solid #000;
+      padding: 50px;
+      border-radius: 10px;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
 }
 
 .title{
