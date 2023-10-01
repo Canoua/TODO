@@ -6,6 +6,17 @@
   align-items: center;
   justify-content: center;
   margin-right: 50px;
+  @media(max-width: 767px) {
+    width: 55%;
+    margin-right: 30px;
+  }
+  @media(max-width: 575px) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+    justify-content: flex-start;
+    min-height: auto;
+  }
   &__header{
     width: 100%;
     display: flex;
@@ -29,6 +40,9 @@
       @media(max-width: 1366px) {
         padding: 30px;
       }
+      @media(max-width: 575px) {
+        padding: 10px;
+      }
     }
   }
   &__form{
@@ -45,10 +59,16 @@
   font-size: 30px;
   line-height: 120%;
   text-align: center;
+  @media(max-width: 575px) {
+    font-size: 25px;
+  }
 }
 
 .title-2{
   margin-bottom: 10px;
+  @media(max-width: 575px) {
+    font-size: 20px;
+  }
 }
 
 .input{
