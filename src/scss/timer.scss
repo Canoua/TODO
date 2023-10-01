@@ -1,5 +1,4 @@
 .timer{
-  padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,6 +9,9 @@
   &__number{
     margin-bottom: 30px;
     font-size: 50px;
+    @media(max-width: 1366px) {
+      font-size: 40px;
+    }
   }
   &__buttons{
     display: flex;

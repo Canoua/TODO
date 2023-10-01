@@ -1,14 +1,11 @@
-//логика: 
-//- если доходят до крайней цифры, то обнуляем и добавляем +1 к следующему разряду
 const start = document.getElementById('start-btn');
 const stop = document.getElementById('stop-btn');
 const reset = document.getElementById('reset-btn');
-let seconds = document.querySelector('.seconds');
-let minutes = document.querySelector('.minutes');
-let hours = document.querySelector('.hours');
-let secondsCounter = 0;
-let minutesCounter = 0;
-let hoursCounter = 0;
+
+// let minutes = document.querySelector('.minutes');
+// let hours = document.querySelector('.hours');
+// let minutesCounter = 0;
+// let hoursCounter = 0;
 
 function removeAttribute(block) {
   block.removeAttribute('disabled', 'disabled');
@@ -16,6 +13,8 @@ function removeAttribute(block) {
 
 function timer() {
   function timeIncrement() {
+    let seconds = document.querySelector('.seconds');
+    let secondsCounter = 0;
     secondsCounter = secondsCounter+1; 
     
     if(secondsCounter == 59) {
@@ -26,9 +25,11 @@ function timer() {
   }
   start.setAttribute('disabled', 'disabled');
   
+  //удаляем аттрибут disabled 
   removeAttribute(stop);
   removeAttribute(reset);
   
+  //интервал для секунд
   setInterval(timeIncrement, 1000);  
 }
 

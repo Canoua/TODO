@@ -1,14 +1,11 @@
 const addBtn = document.getElementById('add-btn');
-const formInput = document.getElementById('form-input');
-const list = document.getElementById('list');
-const input = document.getElementById('input');
-const stub = document.getElementById('stub');
-
-stub.innerHTML = 'Дел нет'; 
 
 function addTodo() {
   const todoItem = document.createElement('div');
+  const input = document.getElementById('input');
   const error = document.getElementById('error');
+  const stub = document.getElementById('stub');
+  stub.innerHTML = 'Дел нет'; 
  
   //рендер дела/рефакторинг
   todoItem.classList.add('list__item');
@@ -25,6 +22,8 @@ function addTodo() {
   //validation
   function validation() {
     if(input.value !== '') {
+      const list = document.getElementById('list');
+
       list.appendChild(todoItem);
       input.value = '';
       error.innerHTML = '';
