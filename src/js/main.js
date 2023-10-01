@@ -1,3 +1,8 @@
+//стили
 import './../scss/commons.scss';
-import './timer';
-import './todo';
+//компонент timer
+import './components/timer/timer.js';
+import './components/timer/script.js';
+//компонент todo
+import './components/todo/todo.js';
+import './components/todo/script.js';
