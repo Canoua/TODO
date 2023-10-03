@@ -12,9 +12,11 @@ todo.innerHTML = `
   <div class="todo__output">
     <article class="todo__output-content">
       <h2 class="title-2">Мои дела</h1>
-        <ul class="list" id="list">
-          <div class="stub" id="stub"><!-- Пока что дел нет:) --></div>
-        </ul>
+      <ul class="list" id="list">
+        <div class="stub" id="stub"><!-- Пока что дел нет:) --></div>
+      </ul>
+      <h2 class="title-2">Сделано</h2>
+      <ul class="list-done"></ul>
     </article>
   </div>
 `

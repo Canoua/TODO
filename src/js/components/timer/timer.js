@@ -1,3 +1,4 @@
+
 const timer = document.getElementById('timer');
 
 const timerNumberHtml = `
