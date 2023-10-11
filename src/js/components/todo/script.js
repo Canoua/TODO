@@ -13,7 +13,7 @@ function addTodo() {
       <button class="edit-btn btn">edit</button>
       <button class="delete-btn btn">x</button>
       <button class="done-btn btn">
-        <img src="./../images/done.jpg" alt="done" />
+        <img src="./images/done.jpg" alt="done" />
       </button>
     </div>
   `;
@@ -25,7 +25,6 @@ function addTodo() {
 
       list.appendChild(todoItem);
       const editBtn = document.querySelectorAll('.edit-btn');
-      // console.log(editBtn);
       for(let i=0; i<editBtn.length; i++) {
         editBtn[i].addEventListener('click', function(event) {
           console.log(event.target);

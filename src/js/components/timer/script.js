@@ -32,7 +32,6 @@ function timer() {
 
   // int();
    
-
   // reset.addEventListener('click', () =>{
   //   console.log('timereset');
   //   clearInterval(int);
