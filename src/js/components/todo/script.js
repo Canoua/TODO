@@ -1,4 +1,5 @@
 const addBtn = document.getElementById('add-btn');
+const stub = document.getElementById('stub');
 
 function addTodo() {
   const todoItem = document.createElement('div');
@@ -10,7 +11,7 @@ function addTodo() {
   todoItem.innerHTML = `
     ${input.value}
     <div class="btn-wrapper">
-      <button class="edit-btn btn">edit</button>
+      <button class="edit-btn btn">редактировать</button>
       <button class="delete-btn btn">x</button>
       <button class="done-btn btn">
         <img src="./images/done.jpg" alt="done" />
@@ -32,6 +33,7 @@ function addTodo() {
       }
       input.value = '';
       error.innerHTML = '';
+      stub.innerHTML = '';
     } else {
       error.innerHTML = 'введите название своего дела';
     }
@@ -45,9 +47,13 @@ function addTodo() {
       let targetBtn = event.target;
       let parent = targetBtn.closest('.list__item');
       parent.remove();
+
+      //добавляем заглушку
+      if(i==0) {
+        stub.innerHTML = 'Дел нет';
+      }
     })
   }  
 }
-
 
 addBtn.addEventListener('click', addTodo);
