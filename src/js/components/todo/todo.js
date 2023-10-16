@@ -20,6 +20,14 @@ todo.innerHTML = `
         </ul>
       </div>
       <div class="todo__box">
+        <h2 class="title-2">Делаю</h2>
+        <ul class="list-do">
+          <div class="list-do__stub">
+            <span>Ты еще ничего не начал делать...</span>
+          </div>
+        </ul>
+      </div>
+      <div class="todo__box">
         <h2 class="title-2">Сделано</h2>
         <ul class="list-done">
           <div class="list-done__stub">

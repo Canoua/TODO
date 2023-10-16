@@ -70,6 +70,7 @@
 }
 
 .title-2{
+  text-align: center;
   margin-bottom: 10px;
   @media(max-width: 575px) {
     font-size: 20px;
@@ -133,4 +134,19 @@
       width: 100%;
     }
   }
+}
+
+
+.edit{
+  &-btn{
+    background: transparent;
+    border: none;
+  }
+  &-icon{
+    width: 30px;
+  }
+}
+
+.done-btn{
+  background-color: greenyellow;
 }
