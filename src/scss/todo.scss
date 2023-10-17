@@ -37,6 +37,7 @@
       border-radius: 10px;
       height: 100%;
       width: 100%;
+      // transition: all .3s;
       @media(max-width: 1366px) {
         padding: 30px;
       }
@@ -135,7 +136,6 @@
     }
   }
 }
-
 
 .edit{
   &-btn{

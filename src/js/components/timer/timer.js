@@ -27,4 +27,4 @@ const timerButtons = `
   </div>
 `
 
-timer.innerHTML = `${timerNumber}${timerButtons}`
+// timer.innerHTML = `${timerNumber}${timerButtons}`

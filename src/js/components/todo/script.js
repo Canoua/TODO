@@ -59,22 +59,22 @@ function addTodo() {
 
   //фиксация выполнения
   let doneBtn = document.querySelectorAll('.done-btn');
-  for(let i=0; i<doneBtn.length; i++) {
-    doneBtn[i].addEventListener('click', function(event) {
-      let targetBtn = event.target;
-      let parentDone = targetBtn.closest('.list__item');
-      let doneList = document.querySelector('.list-done');
-      let doneStub = document.querySelector('.list-done__stub');
+  // for(let i=0; i<doneBtn.length; i++) {
+  //   doneBtn[i].addEventListener('click', function(event) {
+  //     let targetBtn = event.target;
+  //     let parentDone = targetBtn.closest('.list__item');
+  //     let doneList = document.querySelector('.list-done');
+  //     let doneStub = document.querySelector('.list-done__stub');
 
-      if(i==0) {
-        stub.innerHTML = 'Дел нет';
-      } 
+  //     if(i==0) {
+  //       stub.innerHTML = 'Дел нет';
+  //     } 
 
-      doneStub.style.display = 'none';
+      // doneStub.style.display = 'none';
       
-      doneList.appendChild(parentDone);
-    })
-  }
+      // doneList.appendChild(parentDone);
+    // })
+  // }
 }
 
 addBtn.addEventListener('click', addTodo);

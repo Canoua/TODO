@@ -16,22 +16,6 @@ todo.innerHTML = `
         <ul class="list" id="list">
           <div class="stub" id="stub">
             Дел нет
-          </div>
-        </ul>
-      </div>
-      <div class="todo__box">
-        <h2 class="title-2">Делаю</h2>
-        <ul class="list-do">
-          <div class="list-do__stub">
-            <span>Ты еще ничего не начал делать...</span>
-          </div>
-        </ul>
-      </div>
-      <div class="todo__box">
-        <h2 class="title-2">Сделано</h2>
-        <ul class="list-done">
-          <div class="list-done__stub">
-            <span>Ты еще ничего не сделал...</span>
             <img class="list-done__stub-img" src="https://utyug.info/upload/medialibrary/3f9/3f9bd29509b04a7aed1b4b90b0099277.jpg">
           </div>
         </ul>
