@@ -57,6 +57,15 @@
       margin-bottom: 30px;
     }
   }
+  &-item{
+    &__input{
+      padding: 5px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: transparent;
+      outline: none;
+    }
+  }
 }
 
 .title{
