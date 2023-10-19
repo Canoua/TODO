@@ -2,43 +2,33 @@ const addBtn = document.getElementById('add-btn');
 const stub = document.getElementById('stub');
 
 function addTodo() {
-  const todoItem = document.createElement('div');
   const input = document.getElementById('input');
   const error = document.getElementById('error');
+  let editBtn = document.querySelectorAll('.edit-btn');
   
   //рендер дела/рефакторинг//
-  todoItem.classList.add('list__item');
-  todoItem.innerHTML = `
-    <input class="todo-item__input" value=${input.value} readonly>
-    <div class="btn-wrapper">
-      <button class="delete-btn btn">x</button>
-      <button class="edit-btn btn">
-        <img class="edit-icon" src="./images/edit.png" alt="edit">
-      </button>
-      <button class="done-btn btn">
-        <img src="./images/done.jpg" alt="done" />
-      </button>
-    </div>
-  `;
+  const todoItem = document.createElement('div');
+  let todoItemHtml = `
+    <div class="list__item">
+      <input class="todo-item__input" value=${input.value} readonly>
+      <div class="btn-wrapper">
+        <button class="delete-btn btn">x</button>
+        <button class="edit-btn btn">
+          <img class="edit-icon" src="./images/edit.png" alt="edit">
+        </button>
+        <button class="done-btn btn">
+          <img src="./images/done.jpg" alt="done" />
+        </button>
+      </div>
+    </div>   
+  `
  
   //validation
   function validation() {
     if(input.value !== '') {
       const list = document.getElementById('list');
-      const editBtn = document.querySelectorAll('.edit-btn');
-
-      list.appendChild(todoItem);
-      for(let i=0; i<editBtn.length; i++) {
-        editBtn[i].addEventListener('click', function(event) {
-          let targetBtn = event.target;
-          let listItem = targetBtn.closest('.list__item');
-          let todoItemInput = listItem.querySelector('.todo-item__input');
-          todoItemInput.removeAttribute('readonly');
-          todoItemInput.style.borderColor='#000';
-          todoItemInput.focus();
-        })
-      }
       
+      list.insertAdjacentHTML('beforeend', todoItemHtml);
       input.value = '';
       error.innerHTML = '';
       stub.innerHTML = '';
@@ -47,6 +37,24 @@ function addTodo() {
     }
   }
   validation();
+
+
+
+  for (let i=0; i<editBtn.length; i++) {
+    editBtn[i].addEventListener('click', function(event) {
+      //определяем элемент, по которому кликаем
+      let targetBtn = event.target;
+      //находим обертку нашего дела
+      let listItem = targetBtn.closest('.list__item');
+      //инпут для редактирования дела
+      let todoItemInput = listItem.querySelector('.todo-item__input');
+
+      todoItemInput.removeAttribute('readonly');
+      todoItemInput.style.borderColor='#000';
+      todoItemInput.focus();
+    })
+  }
+  
 
   //удаление дела по кнопке "x"
   let deleteBtn = document.querySelectorAll('.delete-btn');
@@ -72,8 +80,6 @@ function addTodo() {
     doneBtn[i].addEventListener('click', function(event) {
       let targetBtn = event.target;
       let listItem = targetBtn.closest('.list__item');
-
-      // console.log(listItem.querySelector('.todo-item__input'));
     })
   }
 }

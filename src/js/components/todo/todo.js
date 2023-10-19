@@ -11,15 +11,13 @@ todo.innerHTML = `
   </div>
   <div class="todo__output">
     <article class="todo__output-content">
-      <div class="todo__box">
-        <h2 class="title-2">Мои дела</h1>
-        <ul class="list" id="list">
-          <div class="stub" id="stub">
-            Дел нет
-            <img class="list-done__stub-img" src="https://utyug.info/upload/medialibrary/3f9/3f9bd29509b04a7aed1b4b90b0099277.jpg">
-          </div>
-        </ul>
-      </div>
+      <h2 class="title-2">Мои дела</h1>
+      <ul class="list" id="list">
+        <div class="stub" id="stub">
+          <p>Дел нет</p>
+          <img class="list-done__stub-img" src="https://utyug.info/upload/medialibrary/3f9/3f9bd29509b04a7aed1b4b90b0099277.jpg">
+        </div>
+      </ul>
     </article>
   </div>
 `
