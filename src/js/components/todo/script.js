@@ -8,6 +8,7 @@ function addTodo() {
   
   //рендер дела/рефакторинг//
   const todoItem = document.createElement('div');
+  
   let todoItemHtml = `
     <div class="list__item">
       <input class="todo-item__input" value=${input.value} readonly>
@@ -20,15 +21,25 @@ function addTodo() {
           <img src="./images/done.jpg" alt="done" />
         </button>
       </div>
-    </div>   
+    </div>     
   `
- 
+
+  //плавное добавление дела
+  function adding() {
+    let listItem = document.querySelectorAll('.list__item');
+    for (let i=0; i<listItem.length; i++) {
+      listItem[i].classList.add('active');
+    }
+  }
+
+  setTimeout(adding, 1000)
+  
   //validation
   function validation() {
     if(input.value !== '') {
       const list = document.getElementById('list');
-      
       list.insertAdjacentHTML('beforeend', todoItemHtml);
+      
       input.value = '';
       error.innerHTML = '';
       stub.innerHTML = '';
@@ -36,12 +47,11 @@ function addTodo() {
       error.innerHTML = 'введите название своего дела';
     }
   }
+
   validation();
 
-
-
-  for (let i=0; i<editBtn.length; i++) {
-    editBtn[i].addEventListener('click', function(event) {
+   for (let i=0; i<editBtn.length; i++) {
+      editBtn[i].addEventListener('click', function(event) {
       //определяем элемент, по которому кликаем
       let targetBtn = event.target;
       //находим обертку нашего дела
@@ -54,7 +64,6 @@ function addTodo() {
       todoItemInput.focus();
     })
   }
-  
 
   //удаление дела по кнопке "x"
   let deleteBtn = document.querySelectorAll('.delete-btn');

@@ -1,0 +1,43 @@
+.btn-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-btn{
+  background-color: greenyellow;
+  color: #fff;
+  padding: 0px 10px;
+  border: none;
+  font-size: 25px;
+  width: 10%;
+}
+
+.edit{
+  &-btn{
+    background: transparent;
+    border: none;
+  }
+  &-icon{
+    width: 30px;
+  }
+}
+
+.delete-btn{
+  padding: 3px 10px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.done-btn{
+  height: 30px;
+  border: none;
+  background-color: greenyellow;
+}
+
+.done-btn img{
+  height: 100%;
+}

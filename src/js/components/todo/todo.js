@@ -4,7 +4,7 @@ todo.innerHTML = `
   <div class="todo__header">
     <h1 class="title">Что хотите сделать?</h1>
     <form action="#" class="todo__form" id="form-input">
-      <input type="text" placeholder="Дело" class="input" id="input">
+      <input type="text" placeholder="Дело" class="todo__input" id="input">
       <button class="add-btn btn" id="add-btn" type="submit">+</button>
     </form>
     <div class="error" id="error"></div>
