@@ -4,7 +4,6 @@ const stub = document.getElementById('stub');
 function addTodo() {
   const input = document.getElementById('input');
   const error = document.getElementById('error');
-  let editBtn = document.querySelectorAll('.edit-btn');
   
   //рендер дела/рефакторинг//
   const todoItem = document.createElement('div');
@@ -13,13 +12,13 @@ function addTodo() {
     <div class="list__item">
       <input class="todo-item__input" value=${input.value} readonly>
       <div class="btn-wrapper">
-        <button class="delete-btn btn">x</button>
         <button class="edit-btn btn">
           <img class="edit-icon" src="./images/edit.png" alt="edit">
         </button>
         <button class="done-btn btn">
           <img src="./images/done.jpg" alt="done" />
         </button>
+        <button class="delete-btn btn">x</button>
       </div>
     </div>     
   `
@@ -32,6 +31,7 @@ function addTodo() {
     }
   }
 
+  // adding();
   setTimeout(adding, 1000)
   
   //validation
@@ -50,12 +50,14 @@ function addTodo() {
 
   validation();
 
-   for (let i=0; i<editBtn.length; i++) {
-      editBtn[i].addEventListener('click', function(event) {
+  let editBtn = document.querySelectorAll('.edit-btn');
+
+  for (let i=0; i<editBtn.length; i++) {
+    editBtn[i].addEventListener('click', function(event) {
       //определяем элемент, по которому кликаем
-      let targetBtn = event.target;
+      let targetEditBtn = event.target;
       //находим обертку нашего дела
-      let listItem = targetBtn.closest('.list__item');
+      let listItem = targetEditBtn.closest('.list__item');
       //инпут для редактирования дела
       let todoItemInput = listItem.querySelector('.todo-item__input');
 
@@ -67,6 +69,7 @@ function addTodo() {
 
   //удаление дела по кнопке "x"
   let deleteBtn = document.querySelectorAll('.delete-btn');
+
   for (let i=0; i<deleteBtn.length; i++){   
     deleteBtn[i].addEventListener('click', function(event) {
       let targetBtn = event.target;
@@ -85,10 +88,12 @@ function addTodo() {
 
   //фиксация выполнения
   let doneBtn = document.querySelectorAll('.done-btn');
+
   for(let i=0; i<doneBtn.length; i++) {
     doneBtn[i].addEventListener('click', function(event) {
       let targetBtn = event.target;
       let listItem = targetBtn.closest('.list__item');
+      console.log('done');
     })
   }
 }
