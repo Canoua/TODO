@@ -10,7 +10,10 @@ function addTodo() {
   
   let todoItemHtml = `
     <div class="list__item">
-      <input class="todo-item__input" value=${input.value} readonly>
+      <div>
+        <input class="todo-item__input" value=${input.value} readonly>
+      </div>    
+      <button>Подтвердить</button>
       <div class="btn-wrapper">
         <button class="edit-btn btn">
           <img class="edit-icon" src="./images/edit.png" alt="edit">
