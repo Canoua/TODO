@@ -4,16 +4,13 @@ const stub = document.getElementById('stub');
 function addTodo() {
   const input = document.getElementById('input');
   const error = document.getElementById('error');
-  
-  //рендер дела/рефакторинг//
   const todoItem = document.createElement('div');
   
   let todoItemHtml = `
     <div class="list__item">
-      <div>
+      <div class="todo-item__input-wrapper">
         <input class="todo-item__input" value=${input.value} readonly>
       </div>    
-      <button>Подтвердить</button>
       <div class="btn-wrapper">
         <button class="edit-btn btn">
           <img class="edit-icon" src="./images/edit.png" alt="edit">
@@ -25,17 +22,19 @@ function addTodo() {
       </div>
     </div>     
   `
+  
+  //рендер дела/рефакторинг//
 
   //плавное добавление дела
-  function adding() {
-    let listItem = document.querySelectorAll('.list__item');
-    for (let i=0; i<listItem.length; i++) {
-      listItem[i].classList.add('active');
-    }
-  }
+  // function adding() {
+  //   let listItem = document.querySelectorAll('.list__item');
+  //   for (let i=0; i<listItem.length; i++) {
+  //     listItem[i].classList.add('active');
+  //   }
+  // }
 
   // adding();
-  setTimeout(adding, 1000)
+  // setTimeout(adding, 1000)
   
   //validation
   function validation() {
@@ -54,7 +53,6 @@ function addTodo() {
   validation();
 
   let editBtn = document.querySelectorAll('.edit-btn');
-
   for (let i=0; i<editBtn.length; i++) {
     editBtn[i].addEventListener('click', function(event) {
       //определяем элемент, по которому кликаем
@@ -63,10 +61,25 @@ function addTodo() {
       let listItem = targetEditBtn.closest('.list__item');
       //инпут для редактирования дела
       let todoItemInput = listItem.querySelector('.todo-item__input');
+      let todoItemInputWrapper = listItem.querySelector('.todo-item__input-wrapper');
+      
+      //кнопка для подтверждения редактирования
+      // let confirmBtn = document.querySelector('.todo-item__confirm');
+      let todoItemConfirm = `
+        <button class="todo-item__confirm">Подтвердить</button>
+      `;
 
       todoItemInput.removeAttribute('readonly');
       todoItemInput.style.borderColor='#000';
       todoItemInput.focus();
+      todoItemInputWrapper.insertAdjacentHTML('beforeend', todoItemConfirm);
+
+      let confirmBtn = document.querySelector('.todo-item__confirm');
+      confirmBtn.addEventListener('click', function() {
+        todoItemInput.setAttribute('readonly', 'readonly');
+        todoItemInput.style.borderColor='#fff';
+        confirmBtn.remove();
+      })
     })
   }
 

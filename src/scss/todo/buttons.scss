@@ -41,3 +41,11 @@
 .done-btn img{
   height: 100%;
 }
+
+.todo-item__confirm{
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #000;
+  padding: 5px;
+  border-radius: 5px;
+}

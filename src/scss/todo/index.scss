@@ -2,7 +2,7 @@
 @import url(./list.scss);
 
 .todo{
-  width: 40%;
+  width: 50%;
   min-height: 500px;
   display: flex;
   flex-direction: column;
@@ -68,6 +68,11 @@
       border-style: solid;
       border-color: transparent;
       outline: none;
+      &-wrapper{
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+      }
     }
   }
   &__input{
