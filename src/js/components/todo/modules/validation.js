@@ -22,7 +22,7 @@ export default function validation() {
   if(input.value !== '') {
     const list = document.getElementById('list');
     list.insertAdjacentHTML('beforeend', todoItemHtml);
-    editTodo()
+    editTodo();
     input.value = '';
     error.innerHTML = '';
     stub.innerHTML = '';

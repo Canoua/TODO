@@ -3,28 +3,31 @@ import deleteTodo from "./actions/deleteTodo";
 import doneTodo from "./actions/doneTodo";
 
 export default function addTodo() {
-  const input = document.getElementById('input');
-  const error = document.getElementById('error');
   const addBtn = document.getElementById('add-btn');
-  const stub = document.getElementById('stub');
-  //рендер дела/рефакторинг//
-
-  //плавное добавление дела
-  // function adding() {
-  //   let listItem = document.querySelectorAll('.list__item');
-  //   for (let i=0; i<listItem.length; i++) {
-  //     listItem[i].classList.add('active');
-  //   }
-  // }
-
-  // adding();
-  // setTimeout(adding, 1000)
+  function adding() {
+    const input = document.getElementById('input');
+    const error = document.getElementById('error');
     
-  validation();
-  //удаление дела по кнопке "x"
-  deleteTodo();
-  //фиксация выполнения
-  doneTodo();
+    const stub = document.getElementById('stub');
+    //рендер дела/рефакторинг//
 
-  addBtn.addEventListener('click', addTodo);
+    //плавное добавление дела
+    // function adding() {
+    //   let listItem = document.querySelectorAll('.list__item');
+    //   for (let i=0; i<listItem.length; i++) {
+    //     listItem[i].classList.add('active');
+    //   }
+    // }
+
+    // adding();
+    // setTimeout(adding, 1000)
+      
+    validation();
+    //удаление дела по кнопке "x"
+    deleteTodo();
+    //фиксация выполнения
+    doneTodo();
+    }
+    
+  addBtn.addEventListener('click', adding); 
 }
