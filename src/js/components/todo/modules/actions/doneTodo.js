@@ -4,7 +4,13 @@ export default function doneTodo() {
     doneBtn.addEventListener('click', function(event) {
       let targetBtn = event.target;
       let listItem = targetBtn.closest('.list__item');
-      console.log('done');
+      let doneBtnsClick = document.querySelectorAll('.done-click');
+      
+      listItem.classList.add('list__item_done');
+      for(let doneBtnClick of doneBtnsClick){
+        doneBtnClick.setAttribute('disabled', 'disabled');
+        doneBtnClick.style.cursor = 'inherit';
+      }
     })
   }
 }   

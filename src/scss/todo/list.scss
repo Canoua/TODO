@@ -10,16 +10,18 @@
     &.active{
       opacity: 1;
     }
-    &::before{
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translate(0, -50%);
-      width: 90%;
-      height: 2px;
-      background-color: #000;
-      opacity: 0;
+    &_done{
+      &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 90%;
+        height: 2px;
+        background-color: #000;
+        opacity: 1;
+      }
     }
   }
   &-done{

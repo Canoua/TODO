@@ -7,10 +7,10 @@ export default function validation() {
         <input class="todo-item__input" value=${input.value} readonly>
       </div>    
       <div class="btn-wrapper">
-        <button class="edit-btn btn">
+        <button class="edit-btn btn done-click">
           <img class="edit-icon" src="./images/edit.png" alt="edit">
         </button>
-        <button class="done-btn btn">
+        <button class="done-btn btn done-click">
           <img src="./images/done.jpg" alt="done" />
         </button>
         <button class="delete-btn btn">x</button>
