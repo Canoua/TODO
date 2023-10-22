@@ -1,8 +1,14 @@
-//стили
 import './../scss/commons.scss';
-//компонент timer
+
+//timer
 // import './components/timer/timer.js';
 // import './components/timer/script.js';
-//компонент todo
-import './components/todo/todo.js';
-import './components/todo/script.js';
+
+//todo
+import todoHtml from './components/todo/todoHtml';
+import todoScript from './components/todo/todoScript';
+
+document.addEventListener('DOMContentLoaded', function() {
+  todoHtml();
+  todoScript();
+})
