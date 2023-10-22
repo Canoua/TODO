@@ -5,6 +5,8 @@ import doneTodo from "./actions/doneTodo";
 export default function addTodo() {
   const input = document.getElementById('input');
   const error = document.getElementById('error');
+  const addBtn = document.getElementById('add-btn');
+  const stub = document.getElementById('stub');
   //рендер дела/рефакторинг//
 
   //плавное добавление дела
@@ -19,7 +21,10 @@ export default function addTodo() {
   // setTimeout(adding, 1000)
     
   validation();
- //удаление дела по кнопке "x"
+  //удаление дела по кнопке "x"
   deleteTodo();
+  //фиксация выполнения
   doneTodo();
+
+  addBtn.addEventListener('click', addTodo);
 }

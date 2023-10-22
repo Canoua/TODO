@@ -1,7 +1,7 @@
 export default function editTodo() {
-  let editBtn = document.querySelectorAll('.edit-btn');
-  for (let i=0; i<editBtn.length; i++) {
-    editBtn[i].addEventListener('click', function(event) {
+  let editBtns = document.querySelectorAll('.edit-btn');
+  for (let editBtn of editBtns) {
+    editBtn.addEventListener('click', function(event) {
       //определяем элемент, по которому кликаем
       let targetEditBtn = event.target;
       //находим обертку нашего дела
@@ -21,12 +21,12 @@ export default function editTodo() {
       todoItemInput.focus();
       todoItemInputWrapper.insertAdjacentHTML('beforeend', todoItemConfirm);
 
-      let confirmBtn = document.querySelectorAll('.todo-item__confirm');
-      for (let i=0; i<confirmBtn.length; i++) {
-        confirmBtn[i].addEventListener('click', function() {
+      let confirmBtns = document.querySelectorAll('.todo-item__confirm');
+      for (let confirmBtn of confirmBtns) {
+        confirmBtn.addEventListener('click', function() {
           todoItemInput.setAttribute('readonly', 'readonly');
           todoItemInput.style.borderColor='#fff';
-          confirmBtn[i].remove();
+          confirmBtn.remove();
         })
       }
     })
