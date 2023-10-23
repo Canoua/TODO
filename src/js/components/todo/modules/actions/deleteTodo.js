@@ -7,7 +7,7 @@ export default function deleteTodo() {
       let parent = targetBtn.closest('.list__item');
       parent.remove();
 
-      //добавляем заглушку
+      // добавляем заглушку
       // if(deleteBtn.length=0) {
       //   stub.innerHTML = `
       //     Дел нет

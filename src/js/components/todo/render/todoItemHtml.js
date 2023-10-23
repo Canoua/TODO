@@ -1,5 +1,3 @@
-import editTodo from "../modules/actions/editTodo"
-
 export default function todoItemHtml() {
   let todoItemHtml = `
     <div class="list__item">
@@ -22,14 +20,17 @@ export default function todoItemHtml() {
   //валидация
   if(input.value !== '') {
     const list = document.getElementById('list');
+    //добавляем запись
     list.insertAdjacentHTML('beforeend', todoItemHtml);
-    editTodo();
+    //очищаем поле ввода
     input.value = '';
-    error.innerHTML = '';
+    //убираем ошибку
+    error.style.display = 'none'
+    //убираем заглушку
     stub.innerHTML = '';
   } else {
-    //иначе выводим ошибку
-    error.innerHTML = 'введите название своего дела';
+    //если поле ввода пустое - выводим ошибку
+    error.style.display = 'block'
   }
 }
 

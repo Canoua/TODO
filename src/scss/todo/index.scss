@@ -71,7 +71,6 @@
       &-wrapper{
         display: flex;
         flex-direction: column;
-        // justify-content: center;
       }
     }
   }
@@ -84,4 +83,8 @@
     font-size: 25px;
     width: 90%;
   }
+}
+
+.todo__input:focus .error{
+  display: none;
 }

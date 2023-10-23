@@ -8,7 +8,7 @@ export default function todoHtml() {
         <input type="text" placeholder="Дело" class="todo__input" id="input" autocomplete="on">
         <button class="add-btn btn" id="add-btn" type="submit">+</button>
       </form>
-      <div class="error" id="error"></div>
+      <div class="error" id="error">введите название своего дела</div>
     </div>
     <div class="todo__output">
       <article class="todo__output-content">
