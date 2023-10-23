@@ -1,6 +1,6 @@
-import editTodo from "./actions/editTodo";
+import editTodo from "../modules/actions/editTodo"
 
-export default function validation() {
+export default function todoItemHtml() {
   let todoItemHtml = `
     <div class="list__item">
       <div class="todo-item__input-wrapper">
@@ -18,8 +18,8 @@ export default function validation() {
       </div>
     </div>     
   `  
-  
-  //если поле ввода не пустое, то добавляем дело в список, очищаем поле
+
+  //валидация
   if(input.value !== '') {
     const list = document.getElementById('list');
     list.insertAdjacentHTML('beforeend', todoItemHtml);
@@ -32,3 +32,4 @@ export default function validation() {
     error.innerHTML = 'введите название своего дела';
   }
 }
+

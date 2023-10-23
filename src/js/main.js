@@ -5,7 +5,7 @@ import './../scss/commons.scss';
 // import './components/timer/script.js';
 
 //todo
-import todoHtml from './components/todo/todoHtml';
+import todoHtml from './components/todo/render/todoHtml';
 import todoScript from './components/todo/todoScript';
 
 document.addEventListener('DOMContentLoaded', function() {
