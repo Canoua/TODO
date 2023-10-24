@@ -8,7 +8,7 @@ export default function addTodo() {
 
   function adding(event) {
     event.preventDefault();
-
+    //рендер дела
     todoItemHtml();
     //функция кнопки редактирования
     editTodo();

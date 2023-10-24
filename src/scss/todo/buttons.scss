@@ -17,6 +17,7 @@
   &-btn{
     background: transparent;
     border: none;
+    margin-right: 10px;
   }
   &-icon{
     width: 30px;
@@ -25,10 +26,11 @@
 
 .delete-btn{
   padding: 3px 10px;
-  background-color: red;
-  color: #fff;
-  border: none;
+  background: transparent;
+  color: red;
+  border: 1px solid red;
   font-size: 20px;
+  font-weight: 700;
   margin-right: 5px;
 }
 
@@ -36,6 +38,7 @@
   height: 30px;
   border: none;
   background-color: greenyellow;
+  margin-right: 10px;
 }
 
 .done-btn img{

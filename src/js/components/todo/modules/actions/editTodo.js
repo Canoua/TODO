@@ -1,5 +1,6 @@
 export default function editTodo() {
   let editBtns = document.querySelectorAll('.edit-btn');
+  
   for (let editBtn of editBtns) {
     editBtn.addEventListener('click', function(event) {
       //определяем элемент, по которому кликаем
@@ -21,7 +22,6 @@ export default function editTodo() {
       todoItemInput.style.borderColor='#000';
       todoItemInput.focus();
      
-      // let confirmBtns = document.querySelectorAll('.todo-item__confirm');
       for (let confirmBtn of confirmBtns) {
         confirmBtn.style.display = 'block';
         confirmBtn.addEventListener('click', function() {

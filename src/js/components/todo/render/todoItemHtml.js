@@ -37,4 +37,3 @@ export default function todoItemHtml() {
     error.style.display = 'block'
   }
 }
-
