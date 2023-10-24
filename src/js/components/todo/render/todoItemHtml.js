@@ -1,4 +1,8 @@
 export default function todoItemHtml() {
+  const input = document.getElementById('input');
+  const error = document.getElementById('error');
+  const stub = document.getElementById('stub');
+  
   let todoItemHtml = `
     <div class="list__item">
       <div class="todo-item__input-wrapper">
@@ -16,7 +20,7 @@ export default function todoItemHtml() {
       </div>
     </div>     
   `  
-
+ 
   //валидация
   if(input.value !== '') {
     const list = document.getElementById('list');
