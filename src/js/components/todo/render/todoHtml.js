@@ -11,8 +11,8 @@ export default function todoHtml() {
       <div class="error" id="error">введите название своего дела</div>
     </div>
     <div class="todo__output">
+      <h2 class="title-2">Мои дела</h1>
       <article class="todo__output-content">
-        <h2 class="title-2">Мои дела</h1>
         <ul class="list" id="list">
           <div class="stub" id="stub">
             <p class="stub__title">Дел нет :(</p>

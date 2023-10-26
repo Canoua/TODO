@@ -12,6 +12,23 @@ body{
   font-family: 'Lato', sans-serif;
 }
 
+.wrapper{
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  @media(min-width: 1600px) {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  @media(max-width: 991px) {
+    padding: 0;
+  }
+  @media(max-width: 575px) {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
+
 .title{
   width: 100%;
   margin-bottom: 10px;
@@ -26,6 +43,7 @@ body{
 .title-2{
   text-align: center;
   margin-bottom: 10px;
+  font-weight: 400;
   @media(max-width: 575px) {
     font-size: 20px;
   }
@@ -34,24 +52,6 @@ body{
 .error{
   color: red;
   display: none;
-}
-
-.wrapper{
-  padding: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media(min-width: 1600px) {
-    max-width: 1600px;
-    margin: 0 auto;
-  }
-  @media(max-width: 991px) {
-    padding: 0;
-  }
-  @media(max-width: 575px) {
-    flex-direction: column;
-    padding: 20px;
-  }
 }
 
 .btn{
