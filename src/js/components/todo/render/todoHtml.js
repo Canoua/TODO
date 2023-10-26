@@ -15,7 +15,6 @@ export default function todoHtml() {
       <article class="todo__output-content">
         <ul class="list" id="list">
           <div class="stub" id="stub">
-            <p class="stub__title">Дел нет :(</p>
             <img class="list-done__stub-img" src="https://utyug.info/upload/medialibrary/3f9/3f9bd29509b04a7aed1b4b90b0099277.jpg">
           </div>
         </ul>

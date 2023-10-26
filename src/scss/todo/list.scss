@@ -36,11 +36,21 @@
 }
 
 .stub{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
   transition: all .3s;
   &__title{
     margin-bottom: 10px;
+  }
+  &-opacity{
+    opacity: 0;
+    transition: all .3s linear;
+    // display: none;
+  }
+  &-none{
+    width: 0;
+    height: 0;
+    transition: all .3s linear;
   }
 }
