@@ -5,7 +5,7 @@
 }
 
 .add-btn{
-  background-color: greenyellow;
+  background-color: #000;
   color: #fff;
   padding: 0px 10px;
   border: none;
@@ -37,13 +37,11 @@
 .done-btn{
   height: 30px;
   border: none;
-  background-color: greenyellow;
   margin-right: 10px;
-}
-
-.done-btn img{
-  height: 100%;
-}
+  & img{
+    height: 100%;
+  } 
+} 
 
 .todo-item__confirm{
   cursor: pointer;
