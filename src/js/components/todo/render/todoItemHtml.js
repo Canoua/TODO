@@ -7,7 +7,7 @@ export default function todoItemHtml() {
     <div class="list__item">
       <div class="todo-item__input-wrapper">
         <input class="todo-item__input" value=${input.value} readonly>
-        <button class="todo-item__confirm">Подтвердить</button>
+        <button class="todo-item__confirm">ОК</button>
       </div>    
       <div class="btn-wrapper">
         <button class="edit-btn btn done-click edit-click">

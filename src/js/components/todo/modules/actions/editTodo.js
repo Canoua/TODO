@@ -16,6 +16,7 @@ export default function editTodo() {
 
       for(let editBtnClick of editBtnsClick) {
         editBtnClick.setAttribute('disabled', 'disabled');
+        todoItemInputWrapper.style.border='1px solid #000';
       }
 
       todoItemInput.removeAttribute('readonly');
@@ -27,6 +28,7 @@ export default function editTodo() {
         confirmBtn.addEventListener('click', function() {
           for(let editBtnClick of editBtnsClick) {
             editBtnClick.removeAttribute('disabled', 'disabled');
+            todoItemInputWrapper.style.border='none';
           }
           todoItemInput.setAttribute('readonly', 'readonly');
           todoItemInput.style.borderColor='transparent';
