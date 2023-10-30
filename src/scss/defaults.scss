@@ -51,7 +51,9 @@ body{
 
 .error{
   color: red;
-  display: none;
+  opacity: 0;
+  height: 0;
+  transition: all .3s;
 }
 
 .btn{

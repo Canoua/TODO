@@ -29,7 +29,8 @@ export default function todoItemHtml() {
     //очищаем поле ввода
     input.value = '';
     //убираем ошибку
-    error.style.display = 'none'
+    error.style.display = '0';
+    error.style.height = '0';
     //убираем заглушку
     function stubNone() {
       stub.classList.add('stub-none');
@@ -38,5 +39,11 @@ export default function todoItemHtml() {
   } else {
     //если поле ввода пустое - выводим ошибку
     error.style.display = 'block';
+    function errorVisible() {
+      error.style.opacity = 1;
+      error.style.height = 'auto';
+    }
+
+    setTimeout(errorVisible, 100);
   }
 }
