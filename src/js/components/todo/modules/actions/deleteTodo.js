@@ -5,15 +5,15 @@ export default function deleteTodo() {
     deleteBtn.addEventListener('click', function(event) {
       let targetBtn = event.target;
       let parent = targetBtn.closest('.list__item');
-      parent.remove();
+      let listItems = document.querySelectorAll('.list__item');
 
-      // добавляем заглушку
-      // if(deleteBtn.length=0) {
-      //   stub.innerHTML = `
-      //     Дел нет
-      //     <img class="list-done__stub-img" src="https://utyug.info/upload/medialibrary/3f9/3f9bd29509b04a7aed1b4b90b0099277.jpg">
-      //   `;
-      // }
+      parent.remove();
+      
+      if (listItems.length==0) {
+        console.log(stub);
+        // stub
+      }
+      
     })
   }
 }

@@ -31,18 +31,12 @@ export default function todoItemHtml() {
     //убираем ошибку
     error.style.display = 'none'
     //убираем заглушку
-    function stubOpacity() {
-      stub.classList.add('stub-opacity');
-    }
     function stubNone() {
       stub.classList.add('stub-none');
     }
-    setTimeout(stubOpacity, 1000);
-    setTimeout(stubNone, 2000);
-    
-    // stub.innerHTML = '';
+    setTimeout(stubNone, 100);
   } else {
     //если поле ввода пустое - выводим ошибку
-    error.style.display = 'block'
+    error.style.display = 'block';
   }
 }
