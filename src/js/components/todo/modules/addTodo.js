@@ -13,10 +13,10 @@ export default function addTodo() {
     todoItemHtml();
     //animation
     animation();
-    //функция кнопки редактирования
-    editTodo();
     //удаление дела по кнопке "x"
     deleteTodo();
+    //функция кнопки редактирования
+    editTodo();
     //фиксация выполнения
     doneTodo();
   }
