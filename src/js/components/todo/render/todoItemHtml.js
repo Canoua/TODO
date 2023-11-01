@@ -21,23 +21,23 @@ export default function todoItemHtml() {
     </div>     
   `  
  
-  //валидация
+  // валидация
   if(input.value !== '') {
     const listId = document.getElementById('list');
-    //добавляем запись
+    // добавляем запись
     listId.insertAdjacentHTML('beforeend', todoItemHtml);
-    //очищаем поле ввода
+    // очищаем поле ввода
     input.value = '';
-    //убираем ошибку
+    // убираем ошибку
     error.style.display = '0';
     error.style.height = '0';
-    //убираем заглушку
+    // убираем заглушку
     function stubNone() {
       stub.classList.add('stub-none');
     }
     setTimeout(stubNone, 100);
   } else {
-    //если поле ввода пустое - выводим ошибку
+    // если поле ввода пустое - выводим ошибку
     error.style.display = 'block';
     function errorVisible() {
       error.style.opacity = 1;

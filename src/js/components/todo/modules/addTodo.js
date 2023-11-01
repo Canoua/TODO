@@ -9,15 +9,15 @@ export default function addTodo() {
 
   function adding(event) {
     event.preventDefault();
-    //рендер дела
+    // рендер дела
     todoItemHtml();
-    //animation
+    // animation
     animation();
-    //удаление дела по кнопке "x"
+    // удаление дела по кнопке "x"
     deleteTodo();
-    //функция кнопки редактирования
+    // функция кнопки редактирования
     editTodo();
-    //фиксация выполнения
+    // фиксация выполнения
     doneTodo();
   }
   addBtn.addEventListener('click', adding); 

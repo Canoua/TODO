@@ -11,7 +11,7 @@ export default function deleteTodo() {
   
       parent.remove();
      
-      //добавляем отображение заглушки при отсутсвии дел
+      // добавляем отображение заглушки при отсутсвии дел
       if(listClass.children.length < 1) {
         stub.classList.remove('stub-none');
       }

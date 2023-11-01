@@ -3,11 +3,11 @@ export default function editTodo() {
   
   for (let editBtn of editBtns) {
     editBtn.addEventListener('click', function(event) {
-      //определяем элемент, по которому кликаем
+      // определяем элемент, по которому кликаем
       let targetEditBtn = event.target;
-      //находим обертку нашего дела
+      // находим обертку нашего дела
       let listItem = targetEditBtn.closest('.list__item');
-      //инпут для редактирования дела
+      // инпут для редактирования дела
       let todoItemInput = listItem.querySelector('.todo-item__input');
       
       let todoItemInputWrapper = listItem.querySelector('.todo-item__input-wrapper');

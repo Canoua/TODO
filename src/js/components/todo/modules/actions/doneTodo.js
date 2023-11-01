@@ -9,7 +9,7 @@ export default function doneTodo() {
       
       listItem.classList.add('list__item_done');
 
-      //refactoring
+      // refactoring
       for(let doneBtnClick of doneBtnsClick){
         doneBtnClick.setAttribute('disabled', 'disabled');
         doneBtnClick.style.cursor = 'inherit';
