@@ -23,9 +23,9 @@ export default function todoItemHtml() {
  
   //валидация
   if(input.value !== '') {
-    const list = document.getElementById('list');
+    const listId = document.getElementById('list');
     //добавляем запись
-    list.insertAdjacentHTML('beforeend', todoItemHtml);
+    listId.insertAdjacentHTML('beforeend', todoItemHtml);
     //очищаем поле ввода
     input.value = '';
     //убираем ошибку

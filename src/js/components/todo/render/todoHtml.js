@@ -13,11 +13,10 @@ export default function todoHtml() {
     <div class="todo__output">
       <h2 class="title-2">Мои дела</h1>
       <article class="todo__output-content">
-        <ul class="list" id="list">
-          <div class="stub" id="stub">
-            <img class="list-done__stub-img" src="https://utyug.info/upload/medialibrary/3f9/3f9bd29509b04a7aed1b4b90b0099277.jpg">
-          </div>
-        </ul>
+        <div class="stub" id="stub">
+          <img class="list-done__stub-img" src="https://utyug.info/upload/medialibrary/3f9/3f9bd29509b04a7aed1b4b90b0099277.jpg">
+        </div>  
+        <ul class="list" id="list"></ul>
       </article>
     </div>
   `
