@@ -17,53 +17,74 @@ export default function actions() {
   }
 
   // редактирование дела
-  for (let editBtn of editBtns) {
-    editBtn.addEventListener('click', function(event) {
-      // определяем элемент, по которому кликаем
-      let targetEditBtn = event.target;
-      // находим обертку нашего дела
-      let listItem = targetEditBtn.closest('.list__item');
-      // инпут для редактирования дела
-      let todoItemInput = listItem.querySelector('.todo-item__input');
-      
-      let todoItemInputWrapper = listItem.querySelector('.todo-item__input-wrapper');
-      let confirmBtns = todoItemInputWrapper.querySelectorAll('.todo-item__confirm');
-      let editBtnsClick = document.querySelectorAll('.edit-click');
+  function editTodo(event) {
+    let editBtn = event.target;
+    let listItem = editBtn.closest('.list__item');
+    let todoItemInputWrapper = listItem.querySelector('.todo-item__input-wrapper');
+    let confirmBtn = todoItemInputWrapper.querySelector('.todo-item__confirm'); 
 
-      for (let editBtnClick of editBtnsClick) {
-        editBtnClick.setAttribute('disabled', 'disabled');
-        todoItemInputWrapper.style.border='1px solid #000';
-      }
-
-      todoItemInput.removeAttribute('readonly');
-      todoItemInput.style.borderColor='#000';
-      todoItemInput.focus();
-     
-      for (let confirmBtn of confirmBtns) {
-        confirmBtn.style.display = 'block';
-        confirmBtn.addEventListener('click', function() {
-          for (let editBtnClick of editBtnsClick) {
-            editBtnClick.removeAttribute('disabled', 'disabled');
-            todoItemInputWrapper.style.border='none';
-          }
-          todoItemInput.setAttribute('readonly', 'readonly');
-          todoItemInput.style.borderColor='transparent';
-          confirmBtn.style.display = 'none';
-        })
-      }
-    })
+    editBtn.setAttribute('disabled', 'disabled');
+    todoItemInputWrapper.style.border='1px solid #000';
+    confirmBtn.style.display = 'block';
   }
+
+  // for (let editBtn of editBtns) {
+    // editBtn.addEventListener('click', function(event) {
+      // определяем элемент, по которому кликаем
+      // let targetEditBtn = event.target;
+      // находим обертку нашего дела
+      // let listItem = targetEditBtn.closest('.list__item');
+      // инпут для редактирования дела
+      // let todoItemInput = listItem.querySelector('.todo-item__input');
+      
+      // let todoItemInputWrapper = listItem.querySelector('.todo-item__input-wrapper');
+      // let confirmBtns = todoItemInputWrapper.querySelectorAll('.todo-item__confirm');
+      // let editBtnsClick = document.querySelectorAll('.edit-click');
+
+      // for (let editBtnClick of editBtnsClick) {
+      //   editBtnClick.setAttribute('disabled', 'disabled');
+      //   todoItemInputWrapper.style.border='1px solid #000';
+      // }
+
+
+      // ***
+      // todoItemInput.removeAttribute('readonly');
+      // todoItemInput.style.borderColor='#000';
+      // todoItemInput.focus();
+     
+      // for (let confirmBtn of confirmBtns) {
+      //   confirmBtn.style.display = 'block';
+      //   confirmBtn.addEventListener('click', function() {
+      //     for (let editBtnClick of editBtnsClick) {
+      //       editBtnClick.removeAttribute('disabled', 'disabled');
+      //       todoItemInputWrapper.style.border='none';
+      //     }
+      //     todoItemInput.setAttribute('readonly', 'readonly');
+      //     todoItemInput.style.borderColor='transparent';
+      //     confirmBtn.style.display = 'none';
+        // })
+      // }
+    // })
+  // }
 
   function doneTodo(event) {
     let doneElem = event.target;
 
     if (doneElem.dataset.action === "done") {
-      doneElem.closest('.list__item').classList.add('list__item_done');
+      // делаем кнопку редактирования не активной
+      doneElem.previousElementSibling.setAttribute('disabled', 'disabled');
+      doneElem.previousElementSibling.style.cursor = 'inherit';
+
+      // делаем кнопку подтверждения не активной
       doneElem.setAttribute('disabled', 'disabled');
       doneElem.style.cursor = 'inherit';
+
+      // добавляем перечеркивание дела
+      doneElem.closest('.list__item').classList.add('list__item_done');
     }
   }
 
   listClass.addEventListener('click', deleteTodo);
+  listClass.addEventListener('click', editTodo);
   listClass.addEventListener('click', doneTodo);
 }
