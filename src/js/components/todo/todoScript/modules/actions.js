@@ -57,7 +57,6 @@ export default function actions() {
     })
   }
 
-
   // подтверждение дела
   for (let doneBtn of doneBtns) {
     doneBtn.addEventListener('click', function(event) {

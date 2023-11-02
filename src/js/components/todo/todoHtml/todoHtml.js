@@ -1,5 +1,6 @@
 export default function todoHtml() {
   const todo = document.getElementById('todo');
+  const input = document.getElementById('input');
 
   todo.innerHTML = `
     <div class="todo__header">
@@ -19,5 +20,5 @@ export default function todoHtml() {
         <ul class="list" id="list"></ul>
       </article>
     </div>
-  `
+  `;
 }
