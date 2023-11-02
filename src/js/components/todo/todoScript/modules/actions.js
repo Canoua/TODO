@@ -1,22 +1,19 @@
 export default function actions() {
-  let deleteBtns = document.querySelectorAll('.delete-btn');
+  // let deleteBtns = document.querySelectorAll('.delete-btn');
   let editBtns = document.querySelectorAll('.edit-btn');
   let doneBtns = document.querySelectorAll('.done-btn');
+  let listClass = document.querySelector('.list');
   
-  // удаление дела
-  deleteBtns.forEach((deleteBtn) => {
-    deleteBtn.addEventListener('click', function(event) {
-      let targetBtn = event.target;
-      let parent = targetBtn.closest('.list__item');
-      let listClass = document.querySelector('.list');
-  
-      parent.remove();
-     
-      // добавляем отображение заглушки при отсутсвии дел
-      if (listClass.children.length < 1) {
-        stub.classList.remove('stub-none');
-      }
-    })
+  listClass.addEventListener('click', function(event) {
+    if (event.target.dataset.action === 'delete') {
+      console.log('delete');
+      event.target.closest('.list__item').remove();
+    }
+
+    // добавляем отображение заглушки при отсутсвии дел
+    if (listClass.children.length < 1) {
+      stub.classList.remove('stub-none');
+    }
   })
 
   // редактирование дела
