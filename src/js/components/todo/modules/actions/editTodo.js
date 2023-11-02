@@ -14,7 +14,7 @@ export default function editTodo() {
       let confirmBtns = todoItemInputWrapper.querySelectorAll('.todo-item__confirm');
       let editBtnsClick = document.querySelectorAll('.edit-click');
 
-      for(let editBtnClick of editBtnsClick) {
+      for (let editBtnClick of editBtnsClick) {
         editBtnClick.setAttribute('disabled', 'disabled');
         todoItemInputWrapper.style.border='1px solid #000';
       }
@@ -26,7 +26,7 @@ export default function editTodo() {
       for (let confirmBtn of confirmBtns) {
         confirmBtn.style.display = 'block';
         confirmBtn.addEventListener('click', function() {
-          for(let editBtnClick of editBtnsClick) {
+          for (let editBtnClick of editBtnsClick) {
             editBtnClick.removeAttribute('disabled', 'disabled');
             todoItemInputWrapper.style.border='none';
           }
