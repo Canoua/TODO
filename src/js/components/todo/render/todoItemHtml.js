@@ -19,7 +19,7 @@ export default function todoItemHtml() {
         <button class="delete-btn btn edit-click">x</button>
       </div>
     </div>     
-  `  
+  `;
  
   // валидация
   if (input.value !== '') {

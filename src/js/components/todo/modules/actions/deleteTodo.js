@@ -1,6 +1,5 @@
 export default function deleteTodo() {
   let deleteBtns = document.querySelectorAll('.delete-btn');
-  // let listItems = document.querySelectorAll('.list__item');
   
   deleteBtns.forEach((deleteBtn) => {
     deleteBtn.addEventListener('click', function(event) {
