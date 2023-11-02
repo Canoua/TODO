@@ -11,7 +11,7 @@ export default function validation() {
         <button class="edit-btn btn done-click edit-click">
           <img class="edit-icon" src="./images/edit.png" alt="edit">
         </button>
-        <button class="done-btn btn done-click edit-click">
+        <button class="done-btn btn done-click edit-click" data-action="done">
           <img src="./images/done.jpg" alt="done" />
         </button>
         <button class="delete-btn btn edit-click" data-action="delete">x</button>

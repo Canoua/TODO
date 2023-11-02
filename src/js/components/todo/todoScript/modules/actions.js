@@ -1,20 +1,20 @@
 export default function actions() {
-  // let deleteBtns = document.querySelectorAll('.delete-btn');
   let editBtns = document.querySelectorAll('.edit-btn');
-  let doneBtns = document.querySelectorAll('.done-btn');
   let listClass = document.querySelector('.list');
   
-  listClass.addEventListener('click', function(event) {
-    if (event.target.dataset.action === 'delete') {
-      console.log('delete');
-      event.target.closest('.list__item').remove();
+  function deleteTodo(event) {
+    let deleteElem = event.target;
+
+     // удаляем дело по клике на кнопку
+    if (deleteElem.dataset.action === 'delete') {
+      deleteElem.closest('.list__item').remove();
     }
 
     // добавляем отображение заглушки при отсутсвии дел
     if (listClass.children.length < 1) {
       stub.classList.remove('stub-none');
     }
-  })
+  }
 
   // редактирование дела
   for (let editBtn of editBtns) {
@@ -54,20 +54,16 @@ export default function actions() {
     })
   }
 
-  // подтверждение дела
-  for (let doneBtn of doneBtns) {
-    doneBtn.addEventListener('click', function(event) {
-      let targetBtn = event.target;
-      let listItem = targetBtn.closest('.list__item');
-      let doneBtnsClick = document.querySelectorAll('.done-click');
-      
-      listItem.classList.add('list__item_done');
+  function doneTodo(event) {
+    let doneElem = event.target;
 
-      // refactoring
-      for (let doneBtnClick of doneBtnsClick) {
-        doneBtnClick.setAttribute('disabled', 'disabled');
-        doneBtnClick.style.cursor = 'inherit';
-      }
-    })
+    if (doneElem.dataset.action === "done") {
+      doneElem.closest('.list__item').classList.add('list__item_done');
+      doneElem.setAttribute('disabled', 'disabled');
+      doneElem.style.cursor = 'inherit';
+    }
   }
+
+  listClass.addEventListener('click', deleteTodo);
+  listClass.addEventListener('click', doneTodo);
 }
