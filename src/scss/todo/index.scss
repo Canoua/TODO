@@ -74,6 +74,7 @@
       }
       &-wrapper{
         display: flex;
+        border-radius: 5px;
         @media(max-width: 320px) {
           width: 60%;
         }

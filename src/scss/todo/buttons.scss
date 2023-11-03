@@ -12,6 +12,7 @@
   color: #fff;
   padding: 0px 10px;
   border: none;
+  border-radius: 5px;
   font-size: 25px;
   width: 10%;
 }
@@ -38,6 +39,7 @@
   background: transparent;
   color: red;
   border: 1px solid red;
+  border-radius: 5px;
   font-size: 20px;
   font-weight: 700;
   margin-right: 5px;
@@ -68,10 +70,9 @@
   cursor: pointer;
   background: #000;
   color: #fff;
-  border-bottom: none;
-  border-top: none;
-  border-right: none;
-  border-left: 1px solid #000;
+  border: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
   padding: 5px;
   display: none;
   @media(max-width: 375px) {
