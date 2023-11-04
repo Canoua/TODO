@@ -67,6 +67,7 @@
   &-item{
     &__input{
       padding: 5px;
+      border-radius: 3px;
       border: none;
       outline: none;
       @media(max-width: 375px) {
@@ -75,6 +76,10 @@
       &-wrapper{
         display: flex;
         border-radius: 5px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: transparent;
+        transition: all .3s;
         @media(max-width: 320px) {
           width: 60%;
         }

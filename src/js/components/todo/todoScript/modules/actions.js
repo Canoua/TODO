@@ -1,6 +1,7 @@
 export default function actions() {
   let listClass = document.querySelector('.list');
   
+  // удаление дела
   function deleteTodo(event) {
     let deleteElem = event.target;
 
@@ -23,34 +24,67 @@ export default function actions() {
     if(editBtn.dataset.action === 'edit') {
       // находим обертку нашего дела
       let listItem = editBtn.closest('.list__item');
+      // обертка с кнопками
+      let btnWrapper = listItem.querySelector('.btn-wrapper');
       let todoItemInputWrapper = listItem.querySelector('.todo-item__input-wrapper');
+      // кнопка подтверждения
       let confirmBtn = todoItemInputWrapper.querySelector('.todo-item__confirm'); 
       // инпут для редактирования дела
       let todoItemInput = listItem.querySelector('.todo-item__input');
 
-      // делаем кнопку edit не кликабельной
-      editBtn.setAttribute('disabled', 'disabled');
-      // добавляем бордер на обертку инпута
-      todoItemInputWrapper.style.border='1px solid #000';
-      // добавляем возможность редактировани дела
-      todoItemInput.removeAttribute('readonly');
-      // фокус на инпуте
-      todoItemInput.focus();
+      // плавное исчезновение
+      function fadeBtns() {
+        btnWrapper.classList.add('fade');
+      }
 
-      // отображаем кнопку подтверждения
-      confirmBtn.style.display = 'block';
+      // убираем блок с кнопками
+      function invisibleBtns() {
+        btnWrapper.style.height='0';
+        btnWrapper.style.width='0';
+      }
+
+      function inputWrapperEdit() {
+        // добавляем бордер на обертку инпута
+        todoItemInputWrapper.style.borderColor = '#000';
+        // расширяем контейнер с инпутом
+        todoItemInputWrapper.style.width = '100%';
+
+        todoItemInput.style.width = '90%';
+        // добавляем возможность редактировани дела
+        todoItemInput.removeAttribute('readonly');
+        // фокус на инпуте
+        todoItemInput.focus();
+
+        confirmBtn.style.width = '10%';
+        // отображаем кнопку подтверждения
+        confirmBtn.style.display = 'block';
+      }
+
+      setTimeout(fadeBtns, 300);
+      setTimeout(invisibleBtns, 700);
+      setTimeout(inputWrapperEdit, 1000);
 
       confirmBtn.addEventListener('click', function() {
-        editBtn.removeAttribute('disabled', 'disabled');
-        todoItemInputWrapper.style.border='none';
+        // возвращаем контейнер в прежнее состояние
+        todoItemInputWrapper.style.borderColor = 'transparent';
+        todoItemInputWrapper.style.width = 'auto';
+        
+        // отображаем обертку с кнопками
+        btnWrapper.classList.remove('fade');
+        btnWrapper.style.height='auto';  
+        btnWrapper.style.width='auto';
+        
+        // убираем возможность редактирования дела
         todoItemInput.setAttribute('readonly', 'readonly');
-          todoItemInput.style.borderColor='transparent';
-          confirmBtn.style.display = 'none';
+        todoItemInput.style.width = 'auto';
+
+        // скрываем кнопку подтверждения 
+        confirmBtn.style.display = 'none';
       })
     }
   }
 
-
+  // подтверждение выполнения дела
   function doneTodo(event) {
     let doneElem = event.target;
 
