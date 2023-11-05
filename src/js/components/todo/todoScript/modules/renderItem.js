@@ -47,8 +47,6 @@ export default function validation() {
     // если поле ввода пустое - выводим ошибку
     error.style.opacity = 1;
     error.style.height = 'auto';
-  }
-
-  
+  } 
 }
   

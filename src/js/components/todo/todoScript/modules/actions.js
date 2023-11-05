@@ -33,36 +33,38 @@ export default function actions() {
       let todoItemInput = listItem.querySelector('.todo-item__input');
 
       // плавное исчезновение
-      function fadeBtns() {
-        btnWrapper.classList.add('fade');
-      }
+      let fadeBtns = new Promise(function() {
+        setTimeout(() => {
+          btnWrapper.classList.add('fade');
+        }, 300)
+      });
 
       // убираем блок с кнопками
-      function invisibleBtns() {
-        btnWrapper.style.height='0';
-        btnWrapper.style.width='0';
-      }
+      let invisibleBtns = new Promise(() => {
+        setTimeout(() => {
+          btnWrapper.style.height='0';
+          btnWrapper.style.width='0';
+        }, 700)
+      })
 
-      function inputWrapperEdit() {
-        // добавляем бордер на обертку инпута
-        todoItemInputWrapper.style.borderColor = '#000';
-        // расширяем контейнер с инпутом
-        todoItemInputWrapper.style.width = '100%';
+      let inputWrapperEdit = new Promise(() => {
+        setTimeout(() => {
+          // добавляем бордер на обертку инпута
+          todoItemInputWrapper.style.borderColor = '#000';
+          // расширяем контейнер с инпутом
+          todoItemInputWrapper.style.width = '100%';
 
-        todoItemInput.style.width = '90%';
-        // добавляем возможность редактировани дела
-        todoItemInput.removeAttribute('readonly');
-        // фокус на инпуте
-        todoItemInput.focus();
+          todoItemInput.style.width = '90%';
+          // добавляем возможность редактировани дела
+          todoItemInput.removeAttribute('readonly');
+          // фокус на инпуте
+          todoItemInput.focus();
 
-        confirmBtn.style.width = '10%';
-        // отображаем кнопку подтверждения
-        confirmBtn.style.display = 'block';
-      }
-
-      setTimeout(fadeBtns, 300);
-      setTimeout(invisibleBtns, 700);
-      setTimeout(inputWrapperEdit, 1000);
+          confirmBtn.style.width = '10%';
+          // отображаем кнопку подтверждения
+          confirmBtn.style.display = 'block';
+        }, 1000)
+      })
 
       confirmBtn.addEventListener('click', function() {
         // возвращаем контейнер в прежнее состояние
