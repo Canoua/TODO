@@ -1,6 +1,7 @@
 export default function validation() {
   const error = document.getElementById('error');
   const stub = document.getElementById('stub');
+
   let todoItemHtml = `
     <div class="list__item">
       <div class="todo-item__input-wrapper">
@@ -19,11 +20,19 @@ export default function validation() {
     </div>     
   `;
 
+    
+
   if (input.value !== '') {
     const listId = document.getElementById('list');
-
+    
     // добавляем запись
     listId.insertAdjacentHTML('beforeend', todoItemHtml);
+
+    let listItem = document.querySelectorAll('.list__item');
+
+    for (let i=0; i<listItem.length; i++) {
+      listItem[i].classList.add('active');
+    }
 
     // очищаем поле ввода
     input.value = '';
@@ -33,20 +42,13 @@ export default function validation() {
     error.style.height = '0';
 
     // убираем заглушку
-    function stubNone() {
-      stub.classList.add('stub-none');
-    }
-    setTimeout(stubNone, 100);
+    stub.classList.add('stub-none');
   } else {
     // если поле ввода пустое - выводим ошибку
-    error.style.display = 'block';
+    error.style.opacity = 1;
+    error.style.height = 'auto';
+  }
 
-    function errorVisible() {
-      error.style.opacity = 1;
-      error.style.height = 'auto';
-    }
-    setTimeout(errorVisible, 100);
-  }
-  }
   
+}
   
