@@ -19,8 +19,7 @@ export default function validation() {
       </div>
     </div>     
   `;
-
-    
+     let arr = [];
 
   if (input.value !== '') {
     const listId = document.getElementById('list');
@@ -29,10 +28,17 @@ export default function validation() {
     listId.insertAdjacentHTML('beforeend', todoItemHtml);
 
     let listItem = document.querySelectorAll('.list__item');
+   
+    arr.push(input.value);
+    
 
     for (let i=0; i<listItem.length; i++) {
+      localStorage.setItem(i, listItem[i]);
       listItem[i].classList.add('active');
     }
+
+    // let str = todoItemHtml;
+    // localStorage.setItem('tasks', JSON.stringify(listItem));
 
     // очищаем поле ввода
     input.value = '';
@@ -48,5 +54,7 @@ export default function validation() {
     error.style.opacity = 1;
     error.style.height = 'auto';
   } 
+
+  console.log(arr);
 }
   
