@@ -1,7 +1,6 @@
 export default function todoHtml() {
   const todo = document.getElementById('todo');
-  const input = document.getElementById('input');
-
+ 
   todo.innerHTML = `
     <div class="todo__header">
       <h1 class="title">Что хотите сделать?</h1>

@@ -2,7 +2,7 @@ import actions from "./modules/actions";
 import renderItem from "./modules/renderItem";
 
 export default function todoScript() {
-  const addBtn = document.getElementById('add-btn');
+  const form = document.getElementById('form');
 
   function adding(event) {
     event.preventDefault();
@@ -11,5 +11,5 @@ export default function todoScript() {
     actions();
   }
   
-  addBtn.addEventListener('click', adding); 
+  form.addEventListener('submit', adding); 
 }

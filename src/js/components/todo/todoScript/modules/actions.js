@@ -101,6 +101,7 @@ export default function actions() {
 
       // добавляем перечеркивание дела
       doneElem.closest('.list__item').classList.add('list__item_done');
+      doneElem.closest('.list__item').style.opacity = '0.3';
     }
   }
 

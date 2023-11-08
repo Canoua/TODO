@@ -1,5 +1,6 @@
-export default function validation() {
+export default function renderItem() {
   const error = document.getElementById('error');
+  const input = document.getElementById('input');
   const stub = document.getElementById('stub');
 
   let todoItemHtml = `
@@ -19,8 +20,7 @@ export default function validation() {
       </div>
     </div>     
   `;
-     let arr = [];
-
+  
   if (input.value !== '') {
     const listId = document.getElementById('list');
     
@@ -28,17 +28,20 @@ export default function validation() {
     listId.insertAdjacentHTML('beforeend', todoItemHtml);
 
     let listItem = document.querySelectorAll('.list__item');
-   
-    arr.push(input.value);
     
-
+    let arr = [];
     for (let i=0; i<listItem.length; i++) {
-      localStorage.setItem(i, listItem[i]);
+      
       listItem[i].classList.add('active');
-    }
 
-    // let str = todoItemHtml;
-    // localStorage.setItem('tasks', JSON.stringify(listItem));
+      // добавляем данные в массив
+      let todoItemInput = listItem[i].querySelector('.todo-item__input');
+      arr.push(todoItemInput.value);
+
+      // добавляем массив в локалсторадж
+      localStorage.setItem('Массив дел', JSON.stringify(arr));
+    }
+     console.log(arr);
 
     // очищаем поле ввода
     input.value = '';
@@ -49,12 +52,12 @@ export default function validation() {
 
     // убираем заглушку
     stub.classList.add('stub-none');
+
+  
   } else {
     // если поле ввода пустое - выводим ошибку
     error.style.opacity = 1;
     error.style.height = 'auto';
   } 
-
-  console.log(arr);
 }
   
