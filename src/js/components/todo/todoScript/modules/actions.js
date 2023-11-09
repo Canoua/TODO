@@ -1,21 +1,6 @@
 export default function actions() {
   let listClass = document.querySelector('.list');
   
-  // удаление дела
-  function deleteTodo(event) {
-    let deleteElem = event.target;
-
-    // удаляем дело по клике на кнопку
-    if (deleteElem.dataset.action === 'delete') {
-      deleteElem.closest('.list__item').remove();
-    }
-
-    // добавляем отображение заглушки при отсутсвии дел
-    if (listClass.children.length < 1) {
-      stub.classList.remove('stub-none');
-    }
-  }
-
   // редактирование дела
   function editTodo(event) {
     // определяем элемент, по которому кликаем
@@ -105,7 +90,6 @@ export default function actions() {
     }
   }
 
-  listClass.addEventListener('click', deleteTodo);
   listClass.addEventListener('click', editTodo);
   listClass.addEventListener('click', doneTodo);
 }
