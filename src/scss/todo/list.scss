@@ -1,6 +1,6 @@
 .list{
   &__item{
-    opacity: 0;
+    opacity: 1;
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
@@ -11,9 +11,6 @@
     border-radius: 10px;
     &:last-child{
       margin-bottom: 0;
-    }
-    &.active{
-      opacity: 1;
     }
     &_done{
       &::before{
