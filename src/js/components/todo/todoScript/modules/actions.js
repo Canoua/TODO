@@ -70,26 +70,4 @@ export default function actions() {
       })
     }
   }
-
-  // подтверждение выполнения дела
-  function doneTodo(event) {
-    let doneElem = event.target;
-
-    if (doneElem.dataset.action === "done") {
-      // делаем кнопку редактирования не активной
-      doneElem.previousElementSibling.setAttribute('disabled', 'disabled');
-      doneElem.previousElementSibling.style.cursor = 'inherit';
-
-      // делаем кнопку подтверждения не активной
-      doneElem.setAttribute('disabled', 'disabled');
-      doneElem.style.cursor = 'inherit';
-
-      // добавляем перечеркивание дела
-      doneElem.closest('.list__item').classList.add('list__item_done');
-      doneElem.closest('.list__item').style.opacity = '0.3';
-    }
-  }
-
-  listClass.addEventListener('click', editTodo);
-  listClass.addEventListener('click', doneTodo);
 }

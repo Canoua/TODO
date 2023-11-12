@@ -51,10 +51,6 @@ export default function renderItem() {
       // listClass.addEventListener('click', deleteTodo);
     }
 
-   
-
-   
-
     // очищаем поле ввода
     input.value = '';
 
