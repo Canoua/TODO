@@ -10,8 +10,16 @@ export default function todoScript() {
     tasks = JSON.parse(localStorage.getItem('Массив дел'))
 
     tasks.forEach(function(task) {
+      function checkedClass() {
+        if (task.status == true) {
+          return 'list__item list__item_done';
+        } else {
+          return 'list__item ';
+        };
+      }
+      
       let taskHtml = `
-        <li id="${task.id}" class="list__item">
+        <li id="${task.id}" class="${checkedClass()}">
           <div class="todo-item__input-wrapper">
             <input class="todo-item__input" value=${task.text} readonly>
             <button class="todo-item__confirm">ОК</button>
@@ -29,10 +37,18 @@ export default function todoScript() {
       `;
 
       list.insertAdjacentHTML('beforeend', taskHtml);
+
       // добавляем отображение заглушки при отсутсвии дел
       if (list.children.length > 0) {
         stub.classList.add('stub-none');
       }
+
+      // if (task.done == true) {
+        // console.log('true');
+        //doneElem.closest('.list__item').classList.add('list__item_done');
+      // } else {
+      //   console.log('false');
+      // }
     });
   }
 
@@ -72,7 +88,7 @@ export default function todoScript() {
     list.insertAdjacentHTML('beforeend', todoItemHtml);
 
     console.log(tasks);
-    //добавляем массив в локалсторадж
+    // добавляем массив в локалсторадж
     localStorage.setItem('Массив дел', JSON.stringify(tasks));
   }
 
@@ -102,7 +118,7 @@ export default function todoScript() {
     }
 
     console.log(tasks);
-    //добавляем массив в локалсторадж
+    // добавляем массив в локалсторадж
     localStorage.setItem('Массив дел', JSON.stringify(tasks));
   }
 
@@ -128,20 +144,18 @@ export default function todoScript() {
         doneElem.closest('.list__item').classList.add('list__item_done');
       }
 
-      //добавляем массив в локалсторадж
+      // добавляем массив в локалсторадж
       localStorage.setItem('Массив дел', JSON.stringify(tasks));
 
-      // // делаем кнопку редактирования не активной
-      // doneElem.previousElementSibling.setAttribute('disabled', 'disabled');
-      // doneElem.previousElementSibling.style.cursor = 'inherit';
+      // делаем кнопку редактирования не активной
+      doneElem.previousElementSibling.setAttribute('disabled', 'disabled');
+      doneElem.previousElementSibling.style.cursor = 'inherit';
+      doneElem.previousElementSibling.style.opacity = '0.5';
 
-      // // делаем кнопку подтверждения не активной
-      // doneElem.setAttribute('disabled', 'disabled');
-      // doneElem.style.cursor = 'inherit';
-
-      // // добавляем перечеркивание дела
-      // doneElem.closest('.list__item').classList.add('list__item_done');
-      // doneElem.closest('.list__item').style.opacity = '0.3';
+      // делаем кнопку подтверждения не активной
+      doneElem.setAttribute('disabled', 'disabled');
+      doneElem.style.cursor = 'inherit';
+      doneElem.style.opacity = '0.5';
     }
   }
 
