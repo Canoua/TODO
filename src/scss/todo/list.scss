@@ -51,3 +51,15 @@
     height: 0;
   }
 }
+
+
+.list__item_done .todo-item__input,
+.list__item_done .edit-btn,
+.list__item_done .done-btn {
+  opacity: 0.5;
+}
+
+.edit-btn:disabled,
+.done-btn:disabled {
+  cursor: auto;
+}

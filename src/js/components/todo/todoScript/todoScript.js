@@ -6,12 +6,14 @@ export default function todoScript() {
 
   let tasks = [];
 
+  // рендер разметки из локалсторадж
   if (localStorage.getItem('Массив дел')) {
     tasks = JSON.parse(localStorage.getItem('Массив дел'))
 
     tasks.forEach(function(task) {
       function checkedClass() {
         if (task.status == true) {
+          task.disabled = 'disabled';
           return 'list__item list__item_done';
         } else {
           return 'list__item ';
@@ -25,10 +27,10 @@ export default function todoScript() {
             <button class="todo-item__confirm">ОК</button>
           </div>    
           <div class="btn-wrapper">
-            <button class="edit-btn btn done-click edit-click" data-action="edit">
+            <button class="edit-btn btn done-click edit-click" data-action="edit" disabled=${task.disabled}>
               <img class="edit-icon" src="./images/edit.png" alt="edit">
             </button>
-            <button class="done-btn btn done-click edit-click" data-action="done">
+            <button class="done-btn btn done-click edit-click" data-action="done" disabled=${task.disabled}>
               <img src="./images/done.jpg" alt="done" />
             </button>
             <button class="delete-btn btn edit-click" data-action="delete">x</button>
@@ -42,13 +44,6 @@ export default function todoScript() {
       if (list.children.length > 0) {
         stub.classList.add('stub-none');
       }
-
-      // if (task.done == true) {
-        // console.log('true');
-        //doneElem.closest('.list__item').classList.add('list__item_done');
-      // } else {
-      //   console.log('false');
-      // }
     });
   }
 
@@ -59,7 +54,8 @@ export default function todoScript() {
     const taskData = {
       id: Date.now(),
       text: inputValue,
-      status: false
+      status: false,
+      disabled: 'disabled',
     }
    
     let todoItemHtml = `
@@ -92,8 +88,6 @@ export default function todoScript() {
     localStorage.setItem('Массив дел', JSON.stringify(tasks));
   }
 
-  form.addEventListener('submit', adding);  
-  
   // удаление дела
   function deleteTodo(event) {
     let deleteElem = event.target;
@@ -121,9 +115,6 @@ export default function todoScript() {
     // добавляем массив в локалсторадж
     localStorage.setItem('Массив дел', JSON.stringify(tasks));
   }
-
-  // let listClass = document.querySelector('.list');
-  list.addEventListener('click', deleteTodo);
 
   // подтверждение выполнения дела
   function doneTodo(event) {
@@ -159,6 +150,77 @@ export default function todoScript() {
     }
   }
 
-  // listClass.addEventListener('click', editTodo);
+  // редактирование дела
+  // function editTodo(event) {
+  //   // определяем элемент, по которому кликаем
+  //   let editBtn = event.target;
+
+  //   if(editBtn.dataset.action === 'edit') {
+  //     // находим обертку нашего дела
+  //     let listItem = editBtn.closest('.list__item');
+  //     // обертка с кнопками
+  //     let btnWrapper = listItem.querySelector('.btn-wrapper');
+  //     let todoItemInputWrapper = listItem.querySelector('.todo-item__input-wrapper');
+  //     // кнопка подтверждения
+  //     let confirmBtn = todoItemInputWrapper.querySelector('.todo-item__confirm'); 
+  //     // инпут для редактирования дела
+  //     let todoItemInput = listItem.querySelector('.todo-item__input');
+
+  //     // плавное исчезновение
+  //     let fadeBtns = new Promise(function() {
+  //       setTimeout(() => {
+  //         btnWrapper.classList.add('fade');
+  //       }, 300)
+  //     });
+
+  //     // убираем блок с кнопками
+  //     let invisibleBtns = new Promise(() => {
+  //       setTimeout(() => {
+  //         btnWrapper.style.height='0';
+  //         btnWrapper.style.width='0';
+  //       }, 700)
+  //     })
+
+  //     let inputWrapperEdit = new Promise(() => {
+  //       setTimeout(() => {
+  //         // добавляем бордер на обертку инпута
+  //         todoItemInputWrapper.style.borderColor = '#000';
+  //         // расширяем контейнер с инпутом
+  //         todoItemInputWrapper.style.width = '100%';
+
+  //         todoItemInput.style.width = '90%';
+  //         // добавляем возможность редактировани дела
+  //         todoItemInput.removeAttribute('readonly');
+  //         // фокус на инпуте
+  //         todoItemInput.focus();
+
+  //         confirmBtn.style.width = '10%';
+  //         // отображаем кнопку подтверждения
+  //         confirmBtn.style.display = 'block';
+  //       }, 1000)
+  //     })
+
+  //     confirmBtn.addEventListener('click', function() {
+  //       // возвращаем контейнер в прежнее состояние
+  //       todoItemInputWrapper.style.borderColor = 'transparent';
+  //       todoItemInputWrapper.style.width = 'auto';
+        
+  //       // отображаем обертку с кнопками
+  //       btnWrapper.classList.remove('fade');
+  //       btnWrapper.style.height='auto';  
+  //       btnWrapper.style.width='auto';
+        
+  //       // убираем возможность редактирования дела
+  //       todoItemInput.setAttribute('readonly', 'readonly');
+  //       todoItemInput.style.width = 'auto';
+
+  //       // скрываем кнопку подтверждения 
+  //       confirmBtn.style.display = 'none';
+  //     })
+  //   }
+  // }
+
+  form.addEventListener('submit', adding); 
+  list.addEventListener('click', deleteTodo);
   list.addEventListener('click', doneTodo);
 }
