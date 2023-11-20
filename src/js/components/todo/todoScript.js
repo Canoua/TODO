@@ -22,10 +22,10 @@ export default function todoScript() {
       
       let taskHtml = `
         <li id="${task.id}" class="${checkedClass()}">
-          <div class="todo-item__input-wrapper">
+          <form class="todo-item__input-wrapper">
             <input class="todo-item__input" value=${task.text} readonly>
-            <button class="todo-item__confirm">ОК</button>
-          </div>    
+            <button class="todo-item__confirm" type="submit">ОК</button>
+          </form>    
           <div class="btn-wrapper">
             <button class="edit-btn btn done-click edit-click" data-action="edit" disabled=${task.disabled}>
               <img class="edit-icon" src="./images/edit.png" alt="edit">
@@ -62,7 +62,7 @@ export default function todoScript() {
       <li id="${taskData.id}" class="list__item">
         <div class="todo-item__input-wrapper">
           <input class="todo-item__input" value=${taskData.text} readonly>
-          <button class="todo-item__confirm">ОК</button>
+          <button class="todo-item__confirm" type="submit">ОК</button>
         </div>    
         <div class="btn-wrapper">
           <button class="edit-btn btn done-click edit-click" data-action="edit">
@@ -201,16 +201,6 @@ export default function todoScript() {
         }, 1000)
       })
 
-      // let editElem = event.target;
-        let listItemId =  editBtn.closest('.list__item').id;
-        // ищем индекс удаляемого дела
-        const editTaskFromArr =  tasks.findIndex(function(task) {
-          if(task.id == listItemId) {
-            return true;
-          }
-        });
-        console.log(editTaskFromArr);
-
       confirmBtn.addEventListener('click', function() {
         // возвращаем контейнер в прежнее состояние
         todoItemInputWrapper.style.borderColor = 'transparent';
@@ -228,7 +218,21 @@ export default function todoScript() {
         // скрываем кнопку подтверждения 
         confirmBtn.style.display = 'none';
 
-    
+        let listItemId =  confirmBtn.closest('.list__item').id;
+        // ищем индекс подтверждаемого дела
+        const confirmTaskFromArr =  tasks.findIndex(function(task) {
+          if(task.id == listItemId) {
+            return true;
+          }
+        });
+
+        // console.log(confirmTaskFromArr, '=', todoItemInput.value);
+
+        tasks.forEach(function(task) {
+          if(task.id == listItemId) {
+            task.text = todoItemInput.value;
+          }
+        })
         
         // удаляем дело по клике на кнопку
         // if (deleteElem.dataset.action === 'delete') {
