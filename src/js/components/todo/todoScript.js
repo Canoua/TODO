@@ -13,7 +13,6 @@ export default function todoScript() {
     tasks.forEach(function(task) {
       function checkedClass() {
         if (task.status == true) {
-          task.disabled = 'disabled';
           return 'list__item list__item_done';
         } else {
           return 'list__item ';
@@ -27,10 +26,10 @@ export default function todoScript() {
             <button class="todo-item__confirm" type="submit">ОК</button>
           </form>    
           <div class="btn-wrapper">
-            <button class="edit-btn btn done-click edit-click" data-action="edit" disabled=${task.disabled}>
+            <button class="edit-btn btn done-click edit-click" data-action="edit">
               <img class="edit-icon" src="./images/edit.png" alt="edit">
             </button>
-            <button class="done-btn btn done-click edit-click" data-action="done" disabled=${task.disabled}>
+            <button class="done-btn btn done-click edit-click" data-action="done">
               <img src="./images/done.jpg" alt="done" />
             </button>
             <button class="delete-btn btn edit-click" data-action="delete">x</button>
@@ -103,7 +102,7 @@ export default function todoScript() {
     // удаляем дело по клике на кнопку
     if (deleteElem.dataset.action === 'delete') {
       deleteElem.closest('.list__item').remove();
-       // удаляем дело из массива
+      // удаляем дело из массива
       tasks.splice(deleteTaskFromArr, 1);
     }
 
@@ -226,21 +225,11 @@ export default function todoScript() {
           }
         });
 
-        // console.log(confirmTaskFromArr, '=', todoItemInput.value);
-
         tasks.forEach(function(task) {
           if(task.id == listItemId) {
             task.text = todoItemInput.value;
           }
         })
-        
-        // удаляем дело по клике на кнопку
-        // if (deleteElem.dataset.action === 'delete') {
-          // deleteElem.closest('.list__item').remove();
-          // удаляем дело из массива
-          // tasks.splice(deleteTaskFromArr, 1);
-        // }
-        // localStorage.setItem('Массив дел', JSON.stringify(tasks));
       })
     }
   }
